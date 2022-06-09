@@ -6,7 +6,7 @@ client_credentials_manager = SpotifyClientCredentials(
 
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
-playlist_link = "https://open.spotify.com/playlist/37i9dQZF1DX5UMwGFV95IS?si=206e8a2350094bd2"
+playlist_link = "https://open.spotify.com/playlist/37i9dQZF1DX0F4i7Q9pshJ?si=5d93c36e79334c06"
 playlist_URI = playlist_link.split("/")[-1].split("?")[0]
 
 for track in sp.playlist_tracks(playlist_URI)["items"]:
