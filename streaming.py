@@ -52,6 +52,7 @@ try:
             vocal.write(temp, BUFFERSIZE)
     print("* done echoing")
 
+
 except KeyboardInterrupt:
     a = bytes()
     for i in all:
