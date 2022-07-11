@@ -167,11 +167,10 @@ cython_debug/
 # End of https://www.toptal.com/developers/gitignore/api/python
 
 # folder
-input/*
-output/*
+cache/*
 pretrained_models/*
 
-!input/.gitkeep
+!cache/.gitkeep
 !output/.gitkeep
 !pretrained_models/.gitkeep
 
@@ -179,3 +178,4 @@ pretrained_models/*
 ffmpeg.exe
 ffplay.exe
 ffprobe.exe
+note.md
