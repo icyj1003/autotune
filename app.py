@@ -1,3 +1,7 @@
+"""
+Author: Khoi Bui
+Created on: July 11, 2022
+"""
 import numpy as np
 import librosa
 from numpy import dtype

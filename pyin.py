@@ -1,3 +1,7 @@
+"""
+Author: Khoi Bui
+Created on: June 12, 2022
+"""
 import librosa
 import vamp
 import numpy as np

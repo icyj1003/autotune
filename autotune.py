@@ -1,3 +1,8 @@
+"""
+Author: Khoi Bui
+Created on: July 10, 2022
+"""
+from pydub import AudioSegment
 import os
 import random
 import librosa
@@ -91,3 +96,23 @@ def file_shift(vocal_file, raw_file, output_file, sr):
             pass
 
     scipy.io.wavfile.write(output_file, sr, output)
+
+
+def convert(y, sr):
+    y = np.array(y * (1 << 15), dtype='int16')
+    audio_segment = AudioSegment(
+        y.tobytes(),
+        frame_rate=sr,
+        sample_width=y.dtype.itemsize,
+        channels=1
+    )
+    return audio_segment
+
+
+def merge(sound1, sound2, sr):
+    a, _ = librosa.load("./accompaniment.wav", sr=sr)
+    b, _ = librosa.load("./vocals.wav", sr=sr)
+    a1 = convert(sound1, sr)
+    b1 = convert(sound2, sr)
+    combined = a1.overlay(b1)
+    combined.export(".cache/merged.wav", format='wav')
